@@ -1,7 +1,7 @@
 # Introduction
 Wireless networks consist of mobile nodes, which have the following characteristics: they have movement mechanisms, the ability to send and receive information through the channel while mobile, and they depend on their wireless environment [Mark Greiss]. Therefore, configuring a wireless network is different from configuring a wired network. The architecture of a mobile node in NS2 is an extension of the architecture of a regular node, where the mobile node is equipped with several network components, namely the link layer, interface queue, MAC layer, network interface with an antenna used to define the propagation model. These components are interconnected and connected to the channel. All these connections are shown in Figure 3.1.
 
-**mobile components**
+**Mobile Components**
 
 ![image](https://github.com/ramizass/ns2staticmobile/assets/88464165/bd597119-5a0c-4903-816f-9308f06ef35c)
 
@@ -18,3 +18,9 @@ Generally, the network components used to configure a mobile node include:
 9. Antenna Type (ant): The type of antenna provided is an omnidirectional antenna, which has a 360-degree radiation pattern with a gain of 1. The definition of this antenna is in ns2/antenna.cc and antenna.h.
 
 Another difference between configuring a wireless network and a wired network is the presence of GOD (General Operations Director). GOD is an object used to store global information about the environment, network, or nodes. Typically, the GOD object stores the total number of mobile nodes and a table of the shortest hop count required from the source node to the destination.
+
+# Simulation Scenario
+A wireless network consists of 4 static nodes (n0, n1, n2, and n3). These four nodes are placed at the following coordinates: n0 =(10,10,0), n1=(10,400,0), n2=(400,10,0), and n3=(400,400,0). The nodes are spread over an area of 500x500 square meters. Node n0 sends FTP packets via TCP to node n2, and node n1 also sends FTP packets to node n3. The network simulation will be as follows:
+1. The FTP packet transmission from n0 to n2 starts at the 1-second mark and the FTP packet transmission from n1 to n3 starts at the 2-second mark.
+2. The packet transmission ends at the 15-second mark.
+3. The simulation ends at 15.001 seconds.
